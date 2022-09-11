@@ -60,7 +60,7 @@ a:not(a.up-chevron, a.down-chevron) {
     font-family: 'Nunito';
 }
 
-a:not(a.up-chevron, a.down-chevron):before {
+a:not(a.up-chevron, a.down-chevron)::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -68,6 +68,8 @@ a:not(a.up-chevron, a.down-chevron):before {
     left: 0;
     background-image: url("../Assets/Icons/arrow-up-right-from-square-solid.svg");
     background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 1.1rem;
 }
 
 h1, h2 {
@@ -76,6 +78,7 @@ h1, h2 {
 
 p {
     font-family: 'Nunito';
+    font-size: 1.25rem;
 }
 
 .sections {
@@ -135,7 +138,7 @@ p {
 }
 
 .sections > h1, .sections > h2 {
-    margin: 2.75rem;
+    margin: 6rem 2.75rem 2.75rem 2.75rem;
 }
 
 .sections > h1 {
@@ -157,7 +160,7 @@ p {
     overflow-x: hidden;
     position: relative;
     width: 80vw;
-    margin: 0 0 5rem 2.75rem;
+    margin: 0 0 8rem 2.75rem;
     background: linear-gradient(90deg, rgba(88, 177, 159, var(--background-opacity)), rgba(253, 114, 114, var(--background-opacity)));
     border-top: 0.15rem solid white;
     border-bottom: 0.15rem solid white;
@@ -189,9 +192,17 @@ p {
     top: 0;
 }
 
-.sections > .sect-wrapper * li {
+.sections > .sect-wrapper > * {
     transition: all 0.45s cubic-bezier(0, 1.2, 1, 1);
-    margin-right: 10%;
+    margin: 0.5rem 10% 2rem 0;
+}
+
+.sections > .sect-wrapper * h2 {
+    font-size: 2rem;
+}
+
+.sections > .sect-wrapper * > * > a {
+    font-size: 1.2rem;
 }
 
 .sections > .sect-wrapper * li:hover {
