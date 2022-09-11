@@ -201,8 +201,12 @@ p {
     font-size: 2rem;
 }
 
-.sections > .sect-wrapper * > * > a {
+.sections > .sect-wrapper * > a {
     font-size: 1.2rem;
+}
+
+.sections > .sect-wrapper > section {
+    margin-left: 2.5%;
 }
 
 .sections > .sect-wrapper * li:hover {
@@ -263,4 +267,8 @@ p {
 
 #Footer h2 {
     border-bottom: 0.2rem double white;
+}
+
+#Footer p {
+    margin-left: 1.5rem;
 }
