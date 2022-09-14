@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
+* {
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +16,8 @@ body {
     color: white;
 }
 
-.up-chevron, .down-chevron {
+.up-chevron,
+.down-chevron {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -53,14 +58,14 @@ body {
     background-repeat: no-repeat;
 }
 
-a:not(a.up-chevron, a.down-chevron) {
+a:not(a.up-chevron, a.down-chevron, #Topnav a) {
     position: relative;
     padding: 0 0 0 1.5rem;
     color: #f7a1ff;
     font-family: 'Nunito';
 }
 
-a:not(a.up-chevron, a.down-chevron)::before {
+a:not(a.up-chevron, a.down-chevron, #Topnav a)::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -72,13 +77,91 @@ a:not(a.up-chevron, a.down-chevron)::before {
     background-size: 1.1rem;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Amatic SC', cursive;
 }
 
 p {
     font-family: 'Nunito';
     font-size: 1.25rem;
+}
+
+/* Add a black background color to the top navigation */
+#Topnav {
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    background-color: rgb(21, 33, 48);
+    overflow: hidden;
+    border-bottom: 0.1rem solid #cccccc7a;
+    font-family: 'Amatic SC', cursive;
+}
+
+#Topnav * {
+    padding: 0.5rem 1rem;
+    font-size: 27px;
+    margin: 0;
+}
+
+#Topnav .icon {
+    margin: 0 1rem 0 0;
+    padding-left: 0;
+}
+
+#Topnav>h2 {
+    margin-right: auto;
+}
+
+#Topnav a {
+    color: #cccccc;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Change the color of links on hover */
+#Topnav a:hover {
+    background-color: rgb(221, 221, 221);
+    color: black;
+}
+
+/* Add a color to the active/current link */
+#Topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#Topnav a:not(.icon) {
+    display: none;
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
+#Topnav.responsive {
+    height: 100vh;
+    overflow-y: scroll;
+    display: block;
+}
+
+#Topnav.responsive a:not(.icon) {
+    width: 100vw;
+    height: max-content;
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+#Topnav.responsive .icon {
+    position: absolute;
+    top: 0.3rem;
+    right: -1.05rem;
+}
+
+#Topnav.responsive > div.links {
+    margin: 1rem 0 0 0;
 }
 
 .sections {
@@ -91,8 +174,8 @@ p {
     width: 100vw;
     min-height: 100vh;
     max-height: max-content;
-    background: 
-        linear-gradient(90deg, #182C61 50%,  transparent),
+    background:
+        linear-gradient(90deg, #182C61 50%, transparent),
         var(--banner, linear-gradient(90deg, transparent, #82589F));
     background-repeat: no-repeat;
     background-position-x: right;
@@ -137,25 +220,26 @@ p {
     transform: none;
 }
 
-.sections > h1, .sections > h2 {
-    margin: 6rem 2.75rem 2.75rem 2.75rem;
+.sections>h1,
+.sections>h2 {
+    margin: 6rem 2.75rem 2.75rem 2vw;
 }
 
-.sections > h1 {
+.sections>h1 {
     font-size: 6rem;
     border-bottom: 0.25rem solid white;
 }
 
-.sections > h2 {
+.sections>h2 {
     font-size: 3.5rem;
 }
 
-.sections > p {
+.sections>p {
     margin: 0 20vw 30vh 5vw;
     font-size: 1.5rem;
 }
 
-.sections > .sect-wrapper {
+.sections>.sect-wrapper {
     --background-opacity: 0.15;
     overflow-x: hidden;
     position: relative;
@@ -168,7 +252,7 @@ p {
     transition: all 0.75s cubic-bezier(0, 1.2, 1, 1);
 }
 
-.sections > .sect-wrapper::before {
+.sections>.sect-wrapper::before {
     content: "";
     z-index: -1;
     position: absolute;
@@ -181,46 +265,46 @@ p {
     transition: opacity 2s cubic-bezier(0, 1.2, 1, 1);
 }
 
-.sections > .sect-wrapper:hover {
+.sections>.sect-wrapper:hover {
     --background-opacity: 0.3;
     transform: scale3d(1.025, 1.025, 1.025);
 }
 
-.sections > .sect-wrapper:hover::before {
+.sections>.sect-wrapper:hover::before {
     opacity: 87%;
     height: 100%;
     top: 0;
 }
 
-.sections > .sect-wrapper > * {
+.sections>.sect-wrapper>* {
     transition: all 0.45s cubic-bezier(0, 1.2, 1, 1);
     margin: 0.5rem 10% 2rem 0;
 }
 
-.sections > .sect-wrapper * h2 {
+.sections>.sect-wrapper * h2 {
     font-size: 2rem;
 }
 
-.sections > .sect-wrapper * > a {
+.sections>.sect-wrapper *>a {
     font-size: 1.2rem;
 }
 
-.sections > .sect-wrapper > section {
+.sections>.sect-wrapper>section {
     margin-left: 2.5%;
 }
 
-.sections > .sect-wrapper * li:hover {
+.sections>.sect-wrapper * li:hover {
     padding-left: 1.5rem;
     margin-right: 7.5%;
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.sections > .sect-wrapper * li:hover a {
+.sections>.sect-wrapper * li:hover a {
     color: #ffdfe3;
 }
 
 /* Display content content inside section wappers due to being too nested */
-.sections > .sect-wrapper.inView * {
+.sections>.sect-wrapper.inView * {
     opacity: inherit;
     transform: none;
     -webkit-transform: none;
@@ -232,11 +316,11 @@ p {
     height: max-content;
     min-height: 5.5rem;
     border-top: 0.15rem solid rgba(255, 255, 255, 0.5);
-    background: 
+    background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-        linear-gradient(90deg, #182C61 50%,  transparent),
+        linear-gradient(90deg, #182C61 50%, transparent),
         linear-gradient(90deg, transparent, #82589F);
-} 
+}
 
 #Footer::after {
     content: "";
@@ -246,7 +330,7 @@ p {
     height: 100%;
     top: 0;
     left: 0;
-    background: 
+    background:
         linear-gradient(135deg, #492f5f 25%, transparent 25%) -50px 0,
         linear-gradient(225deg, #2f1e3d 25%, transparent 25%) -50px 0,
         linear-gradient(315deg, #492f5f 25%, transparent 25%),
@@ -255,13 +339,13 @@ p {
     background-size: 100px 100px;
 }
 
-#Footer > * {
+#Footer>* {
     z-index: 100;
     margin: 0.75rem 1.5rem 0 0.75rem;
     padding: 0 0 0.75rem 0;
 }
 
-#Footer > h1 {
+#Footer>h1 {
     border-bottom: 0.15rem solid rgb(255, 255, 255);
 }
 
