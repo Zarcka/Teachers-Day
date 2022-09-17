@@ -1,27 +1,13 @@
-let sections = document.querySelectorAll(".sections");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        entry.target.classList.toggle("hidden", !entry.isIntersecting);
+    })
+})
 
-window.addEventListener('scroll', fadeIn);
+const sections = document.querySelectorAll(".sections");
+const hiddenElems = document.querySelectorAll(".hidden");
 
-function fadeIn() {
-
-    for (let i = 0; i < sections.length; i++) {
-        let elementsArray = sections[i].children;
-
-        for (let i = 0; i < elementsArray.length; i++) {
-            let elem = elementsArray[i]
-            let distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
-
-            if (distInView < 0) {
-                elem.classList.add("inView");
-            } else {
-                elem.classList.remove("inView");
-            }
-        }
-    }
-
-}
-
-fadeIn();
+hiddenElems.forEach((el) => observer.observe(el))
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function openMenu() {

@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <nav id="Topnav" class="topnav">
+        <nav id="Topnav">
             <h2 class="title">Happy Teacher's Day</h2>
             <div class="links">
                 <a href="javascript:void(0)">Placeholder link</a>
@@ -18,7 +18,7 @@
             <img src="./Assets/Icons/folder-tree-solid.svg" alt="Menu-Icon" class="icon" onclick="openMenu()" height="24px" width="24px">
         </nav>
 
-        <section id="Intro" class="sections" style="--banner: url(../Assets/Img/happyTeachersDay.jpg)">
+        <section id="Intro" class="sections hidden" style="--banner: url(../Assets/Img/happyTeachersDay.jpg)">
             <h1>Happy Teacher's Day</h1>
             <p>
                 It is with eagerness that we celebrate this special day, Teacher's Day,
@@ -33,7 +33,7 @@
             <a class="down-chevron" href="#Poem"></a>
         </section>
 
-        <section id="Poem" class="sections" style="--banner: url(../Assets/Img/poem.jpg)">
+        <section id="Poem" class="sections hidden" style="--banner: url(../Assets/Img/poem.jpg)">
             <a class="up-chevron" href="#Intro"></a>
 
             <h2>Poem</h2>
@@ -57,13 +57,13 @@
             <a class="down-chevron" href="#Credits"></a>
         </section>
 
-        <section id="Credits" class="sections">
+        <section id="Credits" class="sections hidden">
             <a class="up-chevron" href="#Poem"></a>
 
             <h2>Credits</h2>
 
-            <div class="sect-wrapper">
-                <section id="Contributors">
+            <div class="sect-wrapper hidden">
+                <section id="Contributors" class="hidden">
                     <ul>
                         <li>
                             <h3>Leo Hurrhungee</h3>
@@ -93,12 +93,12 @@
             <a class="down-chevron" href="#Other-Stuff"></a>
         </section>
 
-        <section id="Other-Stuff" class="sections">
+        <section id="Other-Stuff" class="sections hidden">
             <a href="#Credits" class="up-chevron"></a>
 
             <h2>Other Stuff</h2>
 
-            <div class="sect-wrapper">
+            <div class="sect-wrapper hidden">
                 <section class="links">
                     <section>
                         <h2>Github Repository</h2>
@@ -133,7 +133,7 @@
             </div>
         </section>
 
-        <footer id="Footer">
+        <footer id="Footer" class="hidden">
             <h1>Thanks for checking!</h1>
             <h2>Contact(s)</h2>
             <p>

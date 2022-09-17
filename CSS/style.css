@@ -16,6 +16,12 @@ body {
     color: white;
 }
 
+.hidden *:not(a.up-chevron, a.down-chevron) {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+}
+
 .up-chevron,
 .down-chevron {
     position: absolute;
@@ -85,6 +91,7 @@ h2 {
 p {
     font-family: 'Nunito';
     font-size: 1.25rem;
+    transition: all 0.85s;
 }
 
 /* Add a black background color to the top navigation */
@@ -209,29 +216,6 @@ p {
     background-color: #82589F;
 }
 
-/* Makes content invisible if not in view,
-    Excludes chevrons with :not()
-    link: https://codepen.io/bstonedev/pen/MWWZgKz */
-.sections *:not(a.up-chevron, a.down-chevron) {
-    -webkit-transform: translateY(50px) rotate(-5deg);
-    transform: translateY(50px) rotate(-5deg);
-    -webkit-transition-delay: .3s;
-    -o-transition-delay: .3s;
-    transition-delay: .3s;
-    -webkit-transition: .4s;
-    -o-transition: .4s;
-    transition: .4s;
-    opacity: 0;
-}
-
-/* Display content when in View, still excluding the chevrons,
-    link: https://codepen.io/bstonedev/pen/MWWZgKz */
-.sections *:not(.up-chevron, .down-chevron).inView {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-}
-
 .sections>h1,
 .sections>h2 {
     margin: 6rem 2.75rem 2.75rem 2vw;
@@ -289,8 +273,11 @@ p {
 }
 
 .sections>.sect-wrapper>* {
-    transition: all 0.45s cubic-bezier(0, 1.2, 1, 1);
     margin: 0.5rem 10% 2rem 0;
+}
+
+.sections>.sect-wrapper * {
+    transition: all 0.85s cubic-bezier(0, 1.2, 1, 1);
 }
 
 .sections>.sect-wrapper * h2 {
@@ -313,13 +300,6 @@ p {
 
 .sections>.sect-wrapper * li:hover a {
     color: #ffdfe3;
-}
-
-/* Display content content inside section wappers due to being too nested */
-.sections>.sect-wrapper.inView * {
-    opacity: inherit;
-    transform: none;
-    -webkit-transform: none;
 }
 
 /*! .section - END */
