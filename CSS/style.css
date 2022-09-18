@@ -114,21 +114,6 @@ p {
     margin: 0;
 }
 
-#Topnav .links {
-    margin: 1rem 0 0 0;
-    position: absolute;
-    top: 3rem;
-    width: 80vw;
-    opacity: 0;
-    transform: translateX(-100rem);
-    transition: all 0.4s, opacity 0.5s 0.5s;
-}
-
-#Topnav .icon {
-    margin: 0.4rem 1rem 0 0;
-    padding-left: 0;
-}
-
 #Topnav>h2 {
     overflow: hidden;
     margin-right: auto;
@@ -152,6 +137,27 @@ p {
 #Topnav a.active {
     background-color: #04AA6D;
     color: white;
+}
+
+#Topnav .icon {
+    margin: 0.4rem 1rem 0 0;
+    padding-left: 0;
+}
+
+#Topnav .links {
+    margin: 1rem 0 0 0;
+    position: absolute;
+    top: 3rem;
+    width: 80vw;
+    opacity: 0;
+    transform: translateX(-100rem);
+    transition: all 0.4s, opacity 0.5s 0.5s;
+}
+
+#Topnav .links > section {
+    margin: 0 0 0 2rem 0;
+    border-top: 0.15rem solid white;
+    border-bottom: 0.15rem solid white;
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
