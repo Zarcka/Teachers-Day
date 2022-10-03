@@ -229,77 +229,95 @@ p {
     font-size: 1.5rem;
 }
 
-.sections>.sect-wrapper {
-    --background-opacity: 0.15;
+.sections>.wrapper {
     overflow-x: hidden;
     position: relative;
-    width: 80vw;
+    width: 90vw;
     margin: 0 0 8rem 2.75rem;
-    background: linear-gradient(90deg, rgba(88, 177, 159, var(--background-opacity)), rgba(253, 114, 114, var(--background-opacity)));
     border-top: 0.15rem solid white;
     border-bottom: 0.15rem solid white;
     font-family: 'Nunito';
     transition: all 0.75s cubic-bezier(0, 1.2, 1, 1);
 }
 
-.sections>.sect-wrapper::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    box-shadow: 1.5rem 2rem 0rem 0rem rgb(8, 3, 10);
-    transition: opacity 2s cubic-bezier(0, 1.2, 1, 1);
+.sections>.wrapper.wrapper--background {
+    --background-opacity: 0.15;
+    background: linear-gradient(90deg, rgba(88, 177, 159, var(--background-opacity)), rgba(253, 114, 114, var(--background-opacity)));
 }
 
-.sections>.sect-wrapper:hover {
+.sections>.wrapper.wrapper.wrapper--background:hover {
     --background-opacity: 0.3;
     transform: scale3d(1.025, 1.025, 1.025);
 }
 
-.sections>.sect-wrapper:hover::before {
-    opacity: 87%;
-    height: 100%;
-    top: 0;
+.sections>.wrapper:has(img) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 
-.sections>.sect-wrapper>* {
-    margin: 0.5rem 10% 2rem 0;
+.sections>.wrapper>* {
+    margin: 0.5rem 0.9rem 2rem 0;
 }
 
-.sections>.sect-wrapper * {
-    transition: all 0.85s cubic-bezier(0, 1.2, 1, 1);
+.sections>.wrapper>h2 {
+    margin-left: 0.5rem;
 }
 
-.sections>.sect-wrapper * h2 {
-    font-size: 2rem;
-}
-
-.sections>.sect-wrapper *>a {
-    font-size: 1.2rem;
-}
-
-.sections>.sect-wrapper>section {
-    margin-left: 2.5%;
-}
-
-.sections>.sect-wrapper * li {
+.sections>.wrapper * {
     transition: 
         all 1s cubic-bezier(0, 1.2, 1, 1), 
         transform 1s calc(var(--n, 0) * 100ms) cubic-bezier(0, 1.2, 1, 1), 
         opacity 1s calc(var(--n, 0) * 100ms) cubic-bezier(0, 1.2, 1, 1);
 }
 
-.sections>.sect-wrapper * li:hover {
+.sections>.wrapper img {
+    height: 75vh;
+    min-height: 13rem;
+    max-height: 18rem;
+    width: auto;
+}
+
+.sections>.wrapper img:hover {
+    scale: 1.025;
+}
+
+.sections>.wrapper:has(img:hover) img:not(:hover) {
+    scale: 0.975;
+    filter: brightness(0.5);
+}
+
+.sections>.wrapper * h2 {
+    margin-left: 1rem;
+    border-bottom: 0.15rem solid #925aa37a;
+    font-size: 2rem;
+}
+
+.sections>.wrapper * p {
+    margin-left: 1rem;
+}
+
+.sections>.wrapper *>a {
+    font-size: 1.2rem;
+}
+
+.sections>.wrapper>section {
+    margin-left: 2.5%;
+}
+
+.sections>.wrapper>section section {
+    border-top: 0.15rem solid #cccccc7a;
+    border-bottom: 0.15rem solid #cccccc7a;
+}
+
+.sections>.wrapper * li:hover {
     padding-left: 1.5rem;
     margin-right: 7.5%;
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.sections>.sect-wrapper * li:hover a {
+.sections>.wrapper * li:hover a {
     color: #ffdfe3;
 }
 
@@ -348,6 +366,9 @@ p {
 
 #Footer h2 {
     border-bottom: 0.2rem double white;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
 #Footer p {
