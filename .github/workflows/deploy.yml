@@ -8,9 +8,6 @@ jobs:
   build_site:
     runs-on: ubuntu-latest
     steps:
-      - name: Change Directory
-        run: cd ../2023
-    
       - name: Checkout
         uses: actions/checkout@v3
 
